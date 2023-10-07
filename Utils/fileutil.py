@@ -4,6 +4,7 @@ import sys
 from os import listdir
 from os.path import isfile, join
 import glob
+import datetime
 
 class FileUtil:
     def __init__(self):
@@ -19,7 +20,12 @@ class FileUtil:
 
     def get_file_last_access(self,filename):
         '''Return the last access to the file (date and time)'''
-        pass
+        try:
+            unix_epoch = os.stat(filename).st_atime
+            return datetime.datetime.fromtimestamp(unix_epoch)
+        except FileNotFoundError:
+            print('File not found!')
+            sys.exit(-1)
 
     def get_files_in_folder(self,folder,file_extension='*'):
         '''Return list of files in indicated folder'''

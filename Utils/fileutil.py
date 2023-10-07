@@ -17,7 +17,10 @@ class FileUtil:
             print('File not found!')
             sys.exit(-1)
 
-    
+    def get_file_last_access(self,filename):
+        '''Return the last access to the file (date and time)'''
+        pass
+
     def get_files_in_folder(self,folder,file_extension='*'):
         '''Return list of files in indicated folder'''
         '''is possible to use filter to get list of files (file_extension) '''

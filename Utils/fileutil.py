@@ -19,7 +19,8 @@ class FileUtil:
 
     
     def get_files_in_folder(self,folder,file_extension='*'):
-        '''Return list of files in folder'''
+        '''Return list of files in indicated folder'''
+        '''is possible to use filter to get list of files (file_extension) '''
         try:
             only_files = []
             only_files = [f for f in listdir(folder) if isfile(join(folder, f))]

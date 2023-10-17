@@ -28,8 +28,15 @@ class FileUtil:
             sys.exit(-1)
 
     def get_files_in_folder(self,folder,file_extension='*'):
-        '''Return list of files in indicated folder'''
-        '''is possible to use filter to get list of files (file_extension) '''
+        """_summary_
+
+        Args:
+            folder (String): destination folder to get files list
+            file_extension (str, optional): is possible to use filter to get list of files. Defaults to '*'.
+
+        Returns:
+            List: list of files in indicated folder
+        """
         try:
             only_files = []
             only_files = [f for f in listdir(folder) if isfile(join(folder, f))]

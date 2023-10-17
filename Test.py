@@ -15,3 +15,6 @@ print(my_files)
 
 my_files = f.get_files_in_folder('c:/Scripts/MyPythonToolBox','py')
 print(my_files) 
+
+lines_count = f.get_file_lines_number('C:/Scripts/MyPythonToolBox/LICENSE')
+print(str(lines_count)) 

@@ -41,3 +41,18 @@ class FileUtil:
         except FileNotFoundError:
             print('File not found!')
             sys.exit(-1)
+
+    def get_file_lines_number(self,filename):
+        '''Return number of lines in file'''
+        try:
+            line = 0
+            
+            with open(filename,'r') as f:
+              lines = f.readlines()
+              for l in lines:
+                line = line + 1
+
+            return line   
+        except FileNotFoundError:
+            print('File not found!')
+    

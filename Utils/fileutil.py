@@ -11,7 +11,15 @@ class FileUtil:
         pass
 
     def get_file_size(self,filename):
-        '''Return file size in KB'''
+        """_summary_
+
+        Args:
+            filename (string): file for which you nees information about size
+
+        Returns:
+            int: File size in KB 
+        """
+        
         try:
             return math.floor(os.stat(filename).st_size / 1000)
         except FileNotFoundError:
@@ -19,7 +27,14 @@ class FileUtil:
             sys.exit(-1)
 
     def get_file_last_access(self,filename):
-        '''Return the last access to the file (date and time)'''
+        """_summary_
+        Args:
+            filename (string): file for which you want to obtain the las access information
+
+        Returns:
+            datetime.datetime: last access to the file, date and time in human readable format 
+        """
+
         try:
             unix_epoch = os.stat(filename).st_atime
             return datetime.datetime.fromtimestamp(unix_epoch)
@@ -31,8 +46,8 @@ class FileUtil:
         """_summary_
 
         Args:
-            folder (String): destination folder to get files list
-            file_extension (str, optional): is possible to use filter to get list of files. Defaults to '*'.
+            folder (string): destination folder to get files list
+            file_extension (string, optional): is possible to use filter to get list of files. Defaults to '*'.
 
         Returns:
             List: list of files in indicated folder
@@ -50,7 +65,15 @@ class FileUtil:
             sys.exit(-1)
 
     def get_file_lines_number(self,filename):
-        '''Return number of lines in file'''
+        
+        """_summary_
+        Args:
+            filename (string): file for which you want to know lines number
+
+        Returns:
+            int: number of lines read from file
+        """
+        
         try:
             line = 0
             
